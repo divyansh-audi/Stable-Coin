@@ -65,6 +65,7 @@ contract DSCEngine is ReentrancyGuard {
     /////////////////////////////
     //State Variables          //
     /////////////////////////////
+
     uint256 private constant ADDITIONAL_FEED_PRECISION = 1e10;
     uint256 private constant PRECISION = 1e18;
     mapping(address token => address priceFeed) private s_priceFeed; //tokenToPriceFeed
@@ -122,6 +123,7 @@ contract DSCEngine is ReentrancyGuard {
     /////////////////////////////
     //External Functions       //
     /////////////////////////////
+
     function depositCollateralAndMintDSC() external {}
 
     /**
