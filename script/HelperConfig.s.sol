@@ -47,7 +47,7 @@ contract HelperConfig is Script {
     // }
 
     function getOrCreateAnvilConfig() public returns (NetworkConfig memory) {
-        if (activeNetworkConfig.defaultOwner != address(0)) {
+        if (activeNetworkConfig.wethPriceFeed != address(0)) {
             return activeNetworkConfig;
         }
         vm.startBroadcast();
@@ -71,7 +71,7 @@ contract HelperConfig is Script {
             wbtc: address(wbtcMock),
             wethPriceFeed: address(ethUsdPriceFeed),
             wbtcPriceFeed: address(btcUsdPriceFeed),
-            deployerKey: vm.envUint("myAnvilKey")
+            deployerKey: vm.envUint("MY_ANVIL_KEY")
         });
     }
 }
