@@ -39,11 +39,7 @@ contract DecentralizedStableCoinTest is Test {
 
     function testMintFunctionRevertsWithZeroAmount() public {
         vm.prank(owner);
-        vm.expectRevert(
-            DecentralizedStableCoin
-                .DecentralizedStableCoin__MustBeMoreThanZero
-                .selector
-        );
+        vm.expectRevert(DecentralizedStableCoin.DecentralizedStableCoin__MustBeMoreThanZero.selector);
         stableCoin.mint(USER, 0);
     }
 
@@ -60,11 +56,7 @@ contract DecentralizedStableCoinTest is Test {
     function testBurnFuntionRevertsIfOwnerHasLessToken() public {
         vm.startPrank(owner);
         stableCoin.mint(USER, 10 ether);
-        vm.expectRevert(
-            DecentralizedStableCoin
-                .DecentralizedStableCoin__BurnAmountExceedsBalance
-                .selector
-        );
+        vm.expectRevert(DecentralizedStableCoin.DecentralizedStableCoin__BurnAmountExceedsBalance.selector);
         stableCoin.burn(5 ether);
         vm.stopPrank();
     }

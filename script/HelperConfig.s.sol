@@ -67,7 +67,7 @@ contract HelperConfig is Script {
         // return anvilConfig;
         return NetworkConfig({
             defaultOwner: msg.sender,
-            weth: address(wethMock),
+            weth: address(wethMock), //deployed contract address of ERC20Mock
             wbtc: address(wbtcMock),
             wethPriceFeed: address(ethUsdPriceFeed),
             wbtcPriceFeed: address(btcUsdPriceFeed),
